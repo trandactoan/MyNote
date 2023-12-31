@@ -1,0 +1,18 @@
+<mat-drawer-container autosize class="page">
+    <mat-drawer mode="side" opened>
+        <button (click)="showFiller = !showFiller" mat-icon-button >
+            <mat-icon>notes</mat-icon>
+        </button>
+        <mat-list role="list" *ngIf="showFiller">
+            <mat-list-item role="listitem" appOnHover routerLink="/account">Quick note</mat-list-item>
+            <mat-list-item role="listitem" appOnHover routerLink="/user">To do list</mat-list-item>
+            <mat-list-item role="listitem" appOnHover routerLink="/home">Habit</mat-list-item>
+            <mat-list-item role="listitem" appOnHover routerLink="/account">Love money</mat-list-item>
+        </mat-list>
+    </mat-drawer>
+    <mat-drawer-content class="">
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </mat-drawer-content>
+</mat-drawer-container>
